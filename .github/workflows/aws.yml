@@ -78,7 +78,7 @@ jobs:
 
           aws ssm send-command \
             --document-name "AWS-RunShellScript" \
-            --targets "Key=tag:Name,Values=${EC2_TAG_NAME}" \
+            --instance-ids i-08386a6cb03a54cc1 \
             --parameters "commands=${commands_json}" \
             --timeout-seconds 600 \
             --output json

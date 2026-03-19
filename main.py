@@ -12,7 +12,7 @@ app = FastAPI()
 @app.get("/sum")
 def compute_sum(a: float = Query(..., description="First number"), b: float = Query(..., description="Second number")):
     result = a + b
-    return JSONResponse(content={"sum": result, "name": "Hien1"})
+    return JSONResponse(content={"sum": result, "name": "Hien2"})
 
 
 if __name__ == "__main__":
