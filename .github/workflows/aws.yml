@@ -61,7 +61,7 @@ jobs:
           commands_json="$(python3 - <<'PY'
           import json, os
           cmds = [
-            "set -euxo pipefail",
+            "set -eux",
             f"docker rm -f {os.environ['CONTAINER_NAME']} || true",
             f"aws ecr get-login-password --region {os.environ['AWS_REGION']} | docker login --username AWS --password-stdin {os.environ['ECR_REGISTRY']}",
             f"docker pull {os.environ['DEPLOY_IMAGE']}",
